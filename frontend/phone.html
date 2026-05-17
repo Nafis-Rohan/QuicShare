@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>QuickShare — Phone</title>
+  <link rel="stylesheet" href="/style.css?v=5" />
+</head>
+<body data-role="phone" class="phone-body">
+  <header class="app-header">
+    <div class="logo">Quick<span>Share</span></div>
+    <div id="connection-status" class="status-pill">
+      <span class="dot"></span>
+      <span class="status-text">Connecting…</span>
+    </div>
+  </header>
+
+  <section class="phone-hero">
+    <h1>📱 Mobile</h1>
+    <p id="phone-status">Joining session…</p>
+    <p class="session-url">Session: <strong id="session-id">—</strong></p>
+  </section>
+
+  <section class="phone-actions">
+    <p class="send-hint">Upload from your phone — they appear on the PC too.</p>
+    <input type="file" id="phone-file-input" class="file-input-hidden" multiple />
+    <label for="phone-file-input" class="btn btn-primary btn-block choose-files-btn">Choose files from phone</label>
+    <div id="drop-zone" class="drop-zone phone-drop">
+      <p><strong>Or drag & drop</strong> here</p>
+      <p class="hint">Same as the button above</p>
+    </div>
+  </section>
+
+  <section class="card phone-card">
+    <h2>Shared files</h2>
+    <p class="send-hint" style="margin-top:0">From PC or phone — tap Download to save on your phone.</p>
+    <ul id="file-list" class="file-list">
+      <li class="empty-state">No files yet</li>
+    </ul>
+  </section>
+
+  <div class="progress-bar" style="margin: 0 1.25rem;">
+    <div id="progress-fill" class="progress-bar-fill"></div>
+  </div>
+  <p id="progress-label" class="session-url" style="padding: 0 1.25rem;"></p>
+
+  <script src="/boot.js"></script>
+  <script>
+    document.getElementById("phone-status").textContent =
+      window.location.pathname.indexOf("/session/") === 0
+        ? "Connected to PC — share files both ways"
+        : "Open the QR link from your PC";
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickShare — PC</title>
+  <link rel="stylesheet" href="/style.css?v=5" />
+</head>
+<body data-role="pc">
+  <header class="app-header">
+    <div class="logo">Quick<span>Share</span></div>
+    <div id="connection-status" class="status-pill">
+      <span class="dot"></span>
+      <span class="status-text">Starting…</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid-pc">
+      <aside>
+        <section class="card qr-wrap">
+          <h2>Scan to connect</h2>
+          <img id="qr-code" src="/static/qr.png" alt="QR code for phone pairing" width="220" height="220" />
+          <p id="session-url" class="session-url">Loading…</p>
+          <p class="session-url">Session: <strong id="session-id">—</strong></p>
+        </section>
+
+        <section class="card" style="margin-top: 1rem;">
+          <h2>Devices (<span id="device-count">0</span>)</h2>
+          <ul id="device-list" class="device-list">
+            <li class="empty-state">Waiting for phone…</li>
+          </ul>
+        </section>
+      </aside>
+
+      <section>
+        <div class="card">
+          <h2>Send files</h2>
+          <p class="send-hint">Upload from this PC — your phone can download them below.</p>
+          <input type="file" id="file-input" class="file-input-hidden" multiple />
+          <div id="drop-zone" class="drop-zone">
+            <p><strong>Drag & drop</strong> files here</p>
+            <p class="hint">or use the button below</p>
+          </div>
+          <label for="file-input" class="btn btn-primary btn-block choose-files-btn">Choose files from PC</label>
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-bar-fill"></div>
+          </div>
+          <p id="progress-label" class="session-url"></p>
+        </div>
+
+        <div class="card" style="margin-top: 1rem;">
+          <h2>Shared files</h2>
+          <ul id="file-list" class="file-list">
+            <li class="empty-state">No files yet</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top: 1rem;">
+          <h2>Transfer log</h2>
+          <div id="transfer-log" class="transfer-log">
+            <p class="empty-state">Activity will appear here</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="/boot.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Environment
+.env
+.env.*
+
+# Runtime artifacts (all on D:)
+uploads/
+static/qr.png
+.tmp/
+.pip-cache/
+
+# Keep empty static folder in repo
+!static/.gitkeep
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
