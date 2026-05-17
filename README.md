@@ -288,6 +288,3 @@ git push -u origin main
 
 ---
 
-## License
-
-Add your preferred license (e.g. MIT) if you publish the repository publicly.
